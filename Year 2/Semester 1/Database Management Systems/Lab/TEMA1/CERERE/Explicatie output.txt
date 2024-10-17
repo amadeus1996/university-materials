@@ -1,0 +1,16 @@
+Concertele care vor avea loc in anul 2024 sunt cele cu "id_concert" in multimea [100, 110, 120, 130].
+
+La aceste concerte vor fi interpretate urmatoarele piese:
+a) 100: [1, 2]
+b) 110: [3, 4]
+c) 120: [3, 6]
+d) 130: [1, 2]
+
+Piesele care sunt interpretate de exact 2 ori in total sunt [1, 2, 3]; [4, 6] sunt interpretate o singura data.
+
+Titlurile si duratele pieselor sunt:
+a) 1: "Road Trippin", 205
+b) 2: "Scar Tissue", 216
+c) 3: "Tear", 317
+
+Ordonand descrescator dupa durata, vom obtine detaliile de mai sus, dar in ordine inversa.

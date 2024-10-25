@@ -1,4 +1,5 @@
-** PUNCTUL a)
+/*
+PUNCTUL a)
 PIESA: O piesa are un titlu, o durata (specificata in secunde) si un identificator unic "id_piesa". 
 CONCERT: Un concert va avea loc la o data fixata. Concertele au un identificator unic "id_concert".
 REPERTORIU: Toate piesele care vor fi interpretate la fiecare concert; cheia primara compusa este formata din "id_piesa" si "id_concert".
@@ -6,20 +7,22 @@ PIESA_e_interpretata_la_CONCERT: relatie de tip many-to-many intre entitatile PI
 concert trebuie interpretata macar o piesa, iar o piesa poate sa nu fie interpretata deloc), cea maxima fiind M:M (la un concert pot fi interpretate mai multe piese, iar o piesa poate fi interpretata la mai multe concerte). Denumirea acestei relatii in diagrama conceptuala va fi "REPERTORIU".
 
 
-** PUNCTUL b)
+
+PUNCTUL b)
 POZA ATASATA
 
 
-** PUNCTUL c)
+PUNCTUL c)
 Relatia este de tip many-to-many; tabela asociativa "REPERTORIU" rezolva aceasta problema. 
 Noua tabela va avea o cheie primara compusa formata din cheile externe "id_piesa" si "id_concert"; cheile externe fac referinta la "id_piesa" din tabela PIESA si "id_concert" din tabela CONCERT. Nu mai exista alte atribute pentru tabela REPERTORIU.
 
 
-** PUNCTUL d)
+PUNCTUL d)
 POZA ATASATA
+*/
 
 
-** PUNCTUL e)
+/* PUNCTUL e) */
 CREATE TABLE PIESA (
     id_piesa NUMBER(4) PRIMARY KEY,
     titlu VARCHAR(30) NOT NULL,
@@ -42,7 +45,7 @@ CREATE TABLE REPERTORIU (
 );
 
 
-** PUNCTUL f)
+/* PUNCTUL f) */
 INSERT INTO PIESA
 VALUES(1, 'Road Trippin', 205);
 INSERT INTO PIESA
@@ -94,7 +97,9 @@ VALUES(6, 140);
 COMMIT;
 
 
+/* 
 CERINTA SQL: Sa se afiseze titlul si durata pentru fiecare piesa care va fi interpretata de exact 2 ori in total la concertele care vor avea loc in anul 2024. Se va folosi o subcerere corelata, iar rezultatul va fi ordonat descrescator dupa durata.
+*/ 
 
 select p.titlu, p.durata
 from piesa p
